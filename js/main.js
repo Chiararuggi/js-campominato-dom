@@ -1,6 +1,7 @@
 let cellDifficultyEasy= 100;
 let cellDifficultyMedium= 81;
 let cellDifficultyHard= 49;
+let ciccio = [];
 
 
 function getRndNumber(_difficulty) {
@@ -26,8 +27,12 @@ function createSquare(squareAmount){
     cell.classList.add("square");
     cell.innerHTML += squareAmount;
     cell.addEventListener("click", function() {
-
         console.log("Clicked cell", squareAmount);
+            if(ciccio.includes(squareAmount)){
+                cell.classList.add("squareRed");
+                alert("HAI PERSOO!!!");
+                createCell();
+            }
     });
     return cell;
 };
@@ -45,12 +50,16 @@ document.getElementById("playButton").addEventListener("click", function(){
     let difficulty = getDifficulty();
 
     if (difficulty == 1) {
+        ciccio = getBadCell(cellDifficultyEasy);
         createCell(cellDifficultyEasy);
-        let ciccio = getBadCell(cellDifficultyEasy);
         console.log(ciccio);
     } else if (difficulty == 2) {
+        ciccio = getBadCell(cellDifficultyMedium);
         createCell(cellDifficultyMedium);
+        console.log(ciccio);
     } else if (difficulty == 3) {
+        ciccio = getBadCell(cellDifficultyHard);
         createCell(cellDifficultyHard);
+        console.log(ciccio);
     }
 });

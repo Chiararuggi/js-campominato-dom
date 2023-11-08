@@ -85,3 +85,9 @@ h1{
     height: calc(100% / var(--num-cells-per-row) );
     width: calc(100% / var(--num-cells-per-row) );
 }
+
+.squareRed {
+    border: solid 1px red;
+    height: calc(100% / var(--num-cells-per-row) );
+    width: calc(100% / var(--num-cells-per-row) );
+}
