@@ -2,6 +2,7 @@ let cellDifficultyEasy= 100;
 let cellDifficultyMedium= 81;
 let cellDifficultyHard= 49;
 let ciccio = [];
+let punteggio= 0;
 
 
 function getRndNumber(_difficulty) {
@@ -32,6 +33,9 @@ function createSquare(squareAmount){
                 cell.classList.add("squareRed");
                 alert("HAI PERSOO!!!");
                 createCell();
+            }else {
+                punteggio += 1;
+                document.getElementById("message").innerHTML = "Il tuo punteggio è " + punteggio;
             }
     });
     return cell;
@@ -48,6 +52,7 @@ function getBadCell(_badCell){
 
 document.getElementById("playButton").addEventListener("click", function(){
     let difficulty = getDifficulty();
+    punteggio = 0;
 
     if (difficulty == 1) {
         ciccio = getBadCell(cellDifficultyEasy);
