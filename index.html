@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!--header-->
+    <header>
+      <div class="header-container">
+        <div class="row j-b">
+          <!--first col-->
+          <div class="col j-c">
+            <div class="box">
+              <h1>Campo minato</h1>
+            </div>
+          </div>
+          <!--second col-->
+          <div class="col j-c">
+            <div class="box">
+              <!--select-->
+              <label for="difficulty">Difficulty</label>
+              <select name="difficulty" id="diffSelector">
+                <option value="1">Easy</option>
+                <option value="2">Medium</option>
+                <option value="3">Hard</option>
+              </select>
+              <!--button-->
+              <button type="button" id="playButton">Play</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--main-->
+    <div class="main-container">
+        <div class="row">
+            <div class="col j-c a-c w-100">
+                <div class="grid-box" id="grid">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--java-->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
