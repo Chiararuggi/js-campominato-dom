@@ -28,7 +28,6 @@ function createSquare(squareAmount){
     cell.classList.add("square");
     cell.innerHTML += squareAmount;
     cell.addEventListener("click", function() {
-        console.log("Clicked cell", squareAmount);
             if(ciccio.includes(squareAmount)){
                 cell.classList.add("squareRed");
                 alert("HAI PERSOO!!!");
