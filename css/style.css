@@ -94,7 +94,6 @@ h1{
 
 .squareHightlight{
     border: solid 1px rgb(33, 33, 73);
-    background-color: rgb(136, 136, 216);
-    height: calc(100% / var(--num-cells-per-row) );
+    background-color: rgb(136, 136, 216);    height: calc(100% / var(--num-cells-per-row) );
     width: calc(100% / var(--num-cells-per-row) ); 
 }
