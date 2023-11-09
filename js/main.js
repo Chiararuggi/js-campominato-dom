@@ -31,6 +31,7 @@ function checkForScore(squareAmount,cell){
             createCell();
         }else {
             score += 1;
+            cell.classList.add("squareHightlight");
             document.getElementById("message").innerHTML = "Il tuo punteggio è " + score;
             break;
         }
