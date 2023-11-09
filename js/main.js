@@ -1,8 +1,8 @@
 let cellDifficultyEasy= 100;
 let cellDifficultyMedium= 81;
 let cellDifficultyHard= 49;
-let ciccio = [];
-let punteggio= 0;
+let badCellArray = [];
+let score= 0;
 
 
 function getRndNumber(_difficulty) {
@@ -23,19 +23,28 @@ function createCell(cellAmount){
     }
 };
 
+function checkForScore(squareAmount,cell){
+    for(let i = 0; i < badCellArray.length; i++){
+        if(badCellArray[i] == squareAmount){
+            cell.classList.add("squareRed");
+            alert("HAI PERSOO!!!");
+            createCell();
+        }else {
+            score += 1;
+            document.getElementById("message").innerHTML = "Il tuo punteggio è " + score;
+            break;
+        }
+
+    }
+
+}
+
 function createSquare(squareAmount){
     const cell = document.createElement("div");
     cell.classList.add("square");
     cell.innerHTML += squareAmount;
     cell.addEventListener("click", function() {
-            if(ciccio.includes(squareAmount)){
-                cell.classList.add("squareRed");
-                alert("HAI PERSOO!!!");
-                createCell();
-            }else {
-                punteggio += 1;
-                document.getElementById("message").innerHTML = "Il tuo punteggio è " + punteggio;
-            }
+        checkForScore(squareAmount,cell);
     });
     return cell;
 };
@@ -51,19 +60,19 @@ function getBadCell(_badCell){
 
 document.getElementById("playButton").addEventListener("click", function(){
     let difficulty = getDifficulty();
-    punteggio = 0;
+    score = 0;
 
     if (difficulty == 1) {
-        ciccio = getBadCell(cellDifficultyEasy);
+        badCellArray = getBadCell(cellDifficultyEasy);
         createCell(cellDifficultyEasy);
-        console.log(ciccio);
+        console.log(badCellArray);
     } else if (difficulty == 2) {
-        ciccio = getBadCell(cellDifficultyMedium);
+        badCellArray = getBadCell(cellDifficultyMedium);
         createCell(cellDifficultyMedium);
-        console.log(ciccio);
+        console.log(badCellArray);
     } else if (difficulty == 3) {
-        ciccio = getBadCell(cellDifficultyHard);
+        badCellArray = getBadCell(cellDifficultyHard);
         createCell(cellDifficultyHard);
-        console.log(ciccio);
+        console.log(badCellArray);
     }
 });
